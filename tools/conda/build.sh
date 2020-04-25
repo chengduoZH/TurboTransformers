@@ -28,7 +28,8 @@ rm -rf build || true
 mkdir -p build
 cd build
 cmake -G Ninja -DCMAKE_INSTALL_PREFIX="$PREFIX" -DCMAKE_PREFIX_PATH="$PREFIX" \
-    -DCMAKE_BUILD_TYPE=Release  ..
+    -DCMAKE_BUILD_TYPE=Release .. #-DWITH_GPU=ON -DPYTHON_EXECUTABLE:FILEPATH=/home/chengduozhao/miniconda3/bin/python  ..
 ninja
 
 ${PYTHON} -m pip install --no-deps --ignore-installed $(find . -name '*.whl')
+cp $(find . -name '*.whl') /workspace2/TurboTransformers
