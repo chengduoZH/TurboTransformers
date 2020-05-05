@@ -11,8 +11,8 @@
 # permissions and limitations under the License.
 # See the AUTHORS file for names of contributors.
 
-add_subdirectory(core)
-add_subdirectory(layers)
-add_subdirectory(python)
-add_subdirectory(loaders)
-add_subdirectory(model)
+add_subdirectory(kernels)
+
+add_library(transformer OBJECT
+        transformer.cpp
+        )
