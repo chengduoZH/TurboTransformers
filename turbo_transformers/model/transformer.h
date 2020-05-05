@@ -12,4 +12,50 @@
 // See the AUTHORS file for names of contributors.
 
 #pragma once
-class Transformer {};
+
+class TransformerModel {};
+
+class TransformerEncoder {
+ public:
+  void operator() {
+    // embedding
+    //    Embeddings
+    //    PositionEncoder
+    // TransformerEncoderLayer (x N)
+    //    MultiHeadAttention
+    //       LayerNorm_layer_norm
+    //       _self_attention
+    //    TransformerFeedForward
+    //        LayerNorm(_output_norm)
+    //        Dense(_ff1)
+    //        ops::ReLU
+    //        Dense(_ff2)
+    //        ops::Add
+    // LayerNorm(_output_norm)
+  }
+};
+
+class TransformerDecoder {
+  // embedding
+  //    Embeddings
+  //    PositionEncoder
+  // TransformerDecoderLayer (x N)
+  //    MultiHeadAttention(_self_attention)
+  //       LayerNorm_layer_norm
+  //       _self_attention
+  //    MultiHeadAttention(_attention)
+  //       LayerNorm_layer_norm
+  //        _attention
+  //    TransformerFeedForward
+  //        LayerNorm(_output_norm)
+  //        Dense(_ff1)
+  //        ops::ReLU
+  //        Dense(_ff2)
+  //        ops::Add
+  // LayerNorm(_output_norm)
+  // Dense(_proj)
+};
+
+class TransformerDecoderLayer {};
+
+class TransformerEncoderLayer {};
